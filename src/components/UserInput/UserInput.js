@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import Card from '../UI/Card';
 import './UserInput.css';
 
 const UserInput = (props) => {
@@ -28,22 +29,22 @@ const UserInput = (props) => {
     setEnteredAgeValue('');
   };
 
-
-
   return (
-    <form onSubmit={formSubmitHandler}>
-      <div className="form-control">
-        <label>Username</label>
-        <input type="text" onChange={inputNameHandler}></input>
-      </div>
-      <div className="form-control">
-        <label>Age(Years)</label>
-        <input type="number" onChange={inputAgeHandler}></input>
-      </div>
-      <div className="user-controls">
-        <button type="submit">Add User</button>
-      </div>
-    </form>
+    <Card className="form-wrapper">
+      <form onSubmit={formSubmitHandler}>
+        <div className="form-control">
+          <label>Username</label>
+          <input type="text" onChange={inputNameHandler}></input>
+        </div>
+        <div className="form-control">
+          <label>Age(Years)</label>
+          <input type="number" onChange={inputAgeHandler}></input>
+        </div>
+        <div className="user-controls">
+          <button type="submit">Add User</button>
+        </div>
+      </form>
+    </Card>
   );
 };
 
