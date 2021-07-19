@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
-import UserInput from './components/UserInput/UserInput';
 
+import UserInput from './components/UserInput/UserInput';
+import Users from './components/Users/Users';
 import './App.css';
 
 const DUMMY_DATA = [
   {
     name: 'Max',
     age: 31 + ' years old',
-    id: 'ID:1'
+    id: 'g1'
   },
   {
     name: 'Alice',
     age: 25 + ' years old',
-    id: 'ID:2'
+    id: 'g2'
   }
 ];
 
@@ -31,6 +32,7 @@ const App = () => {
   return(
     <div className="App">
       <UserInput onAddUser={addUserHandler}/>
+      <Users items={users}/>
     </div>
   );
 }
