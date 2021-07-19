@@ -1,0 +1,10 @@
+.user {
+  border: 1px solid black;
+  margin: 5px 5px 10px 5px;
+}
+
+.user__info {
+  font-weight: 400;
+  text-align: left;
+  padding: 10px;
+}
