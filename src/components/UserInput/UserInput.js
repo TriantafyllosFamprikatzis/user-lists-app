@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import Card from '../UI/Card/Card';
 import Button from '../UI/Button/Button';
 import './UserInput.css';
 
@@ -51,7 +50,7 @@ const UserInput = (props) => {
   };
 
   return (
-    <Card className="form-wrapper">
+    <div className="form-wrapper">
       <form onSubmit={formSubmitHandler}>
         <div className={nameIsValid ? "form-control" : "form-control invalid"}>
           <label>Username</label>
@@ -65,7 +64,7 @@ const UserInput = (props) => {
           <Button type="submit">Add User</Button>
         </div>
       </form>
-    </Card>
+    </div>
   );
 };
 
