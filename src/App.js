@@ -26,9 +26,6 @@ const App = () => {
     });
   };
 
-  console.log(users);
-
-
   return(
     <div className="App">
       <UserInput onAddUser={addUserHandler}/>
