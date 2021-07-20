@@ -10,8 +10,8 @@ const User = (props) => {
 
   return (
     <li onClick={deleteHandler}>
-      <div className={styles['user']}>
-        <div className={styles['user__info']} id={props.id}>{props.name + `(${props.age})`}</div>
+      <div className={styles.user}>
+        <div className={styles.user__info} id={props.id}>{props.name + ` (${props.age})`}</div>
       </div>
     </li>
   );

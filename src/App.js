@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import Card from './components/UI/Card/Card';
 import UserInput from './components/UserInput/UserInput';
-import Users from './components/Users/Users';
+import UsersList from './components/UsersList/UsersList';
 import './App.css';
 
 const DUMMY_DATA = [
@@ -19,40 +19,38 @@ const DUMMY_DATA = [
 ];
 
 const App = () => {
-  const [users, setUsers] = useState(DUMMY_DATA);
+  const [usersList, setUsersList] = useState(DUMMY_DATA);
 
   const addUserHandler = (user) => {
-    setUsers((prevUsers) => {
-      const updatedUsers = [user, ...prevUsers]
+    setUsersList((prevUsers) => {
+      const updatedUsers = [...prevUsers, user];
       return updatedUsers;
     });
   };
 
   const deleteItemHandler = (userId) => {
-    setUsers((prevUsers) => {
-      const updatedUsers = prevUsers.filter(users => users.id !== userId);
+    setUsersList((prevUsers) => {
+      const updatedUsers = prevUsers.filter(usersList => usersList.id !== userId);
       return updatedUsers;
     });
   };
 
   let content = (
-    <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>
+    <Card>
+      <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>
+    </Card>
   );
 
-  if (users.length > 0) {
+  if (usersList.length > 0) {
     content = (
-      <Users items={users} deleteItem={deleteItemHandler} />
+      <UsersList users={usersList} deleteItem={deleteItemHandler} />
     )
   };
 
   return(
     <div className="App">
-      <Card>
-        <UserInput onAddUser={addUserHandler} />
-      </Card>
-      <Card>
-        {content}
-      </Card>
+      <UserInput onAddUser={addUserHandler} />
+      {content}
     </div>
   );
 }
