@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import Card from './components/UI/Card/Card';
 import UserInput from './components/UserInput/UserInput';
 import Users from './components/Users/Users';
 import './App.css';
@@ -28,8 +29,12 @@ const App = () => {
 
   return(
     <div className="App">
-      <UserInput onAddUser={addUserHandler}/>
-      <Users items={users}/>
+      <Card>
+        <UserInput onAddUser={addUserHandler}/>
+      </Card>
+      <Card>
+        <Users items={users}/>
+      </Card>
     </div>
   );
 }
