@@ -1,12 +1,12 @@
 import React from 'react';
 
-import './User.css';
+import styles from './User.module.css';
 
 const User = (props) => {
   return (
     <li>
-      <div className="user">
-        <div className="user__info">{props.name + `(${props.age})`}</div>
+      <div className={styles['user']}>
+        <div className={styles['user-info']}>{props.name + `(${props.age})`}</div>
       </div>
     </li>
   );
