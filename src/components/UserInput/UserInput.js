@@ -62,7 +62,7 @@ const UserInput = (props) => {
           <input type="number" value={enteredAgeValue} onChange={inputAgeHandler} min="1" max="110"></input>
         </div>
         <div className="user-controls">
-          <Button />
+          <Button type="submit">Add User</Button>
         </div>
       </form>
     </Card>
