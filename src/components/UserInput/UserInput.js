@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import Button from '../UI/Button/Button';
-import './UserInput.css';
+import styles from './UserInput.module.css';
 
 const UserInput = (props) => {
   const [enteredNameValue, setEnteredNameValue] = useState('');
@@ -50,17 +50,17 @@ const UserInput = (props) => {
   };
 
   return (
-    <div className="form-wrapper">
+    <div className={styles['form-wrapper']}>
       <form onSubmit={formSubmitHandler}>
-        <div className={nameIsValid ? "form-control" : "form-control invalid"}>
+        <div className={`${styles['form-control']} ${!nameIsValid && styles.invalid}`}>
           <label>Username</label>
           <input type="text" value={enteredNameValue} onChange={inputNameHandler}></input>
         </div>
-        <div className={ageIsValid ? "form-control" : "form-control invalid"}>
+        <div className={`${styles['form-control']} ${!ageIsValid && styles.invalid}`}>
           <label>Age(Years)</label>
           <input type="number" value={enteredAgeValue} onChange={inputAgeHandler} min="1" max="110"></input>
         </div>
-        <div className="user-controls">
+        <div className={styles['user-controls']}>
           <Button type="submit">Add User</Button>
         </div>
       </form>
