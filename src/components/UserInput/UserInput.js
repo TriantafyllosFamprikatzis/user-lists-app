@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import Card from '../UI/Card/Card';
 import Button from '../UI/Button/Button';
 import styles from './UserInput.module.css';
 
@@ -50,21 +51,21 @@ const UserInput = (props) => {
   };
 
   return (
-    <div className={styles['form-wrapper']}>
+    <Card className={styles['form-wrapper']}>  
       <form onSubmit={formSubmitHandler}>
         <div className={`${styles['form-control']} ${!nameIsValid && styles.invalid}`}>
-          <label>Username</label>
-          <input type="text" value={enteredNameValue} onChange={inputNameHandler}></input>
+          <label htmlFor="username">Username</label>
+          <input id="username" type="text" value={enteredNameValue} onChange={inputNameHandler}></input>
         </div>
         <div className={`${styles['form-control']} ${!ageIsValid && styles.invalid}`}>
-          <label>Age(Years)</label>
-          <input type="number" value={enteredAgeValue} onChange={inputAgeHandler} min="1" max="110"></input>
+          <label htmlFor="age">Age (Years)</label>
+          <input id="age" type="number" value={enteredAgeValue} onChange={inputAgeHandler} min="1" max="110"></input>
         </div>
         <div className={styles['user-controls']}>
           <Button type="submit">Add User</Button>
         </div>
       </form>
-    </div>
+    </Card>
   );
 };
 
