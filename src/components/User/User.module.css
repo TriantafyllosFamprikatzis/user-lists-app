@@ -1,4 +1,5 @@
 .user {
+  cursor: pointer;
   border: 1px solid black;
   margin: 5px 5px 10px 5px;
 }
@@ -7,4 +8,8 @@
   font-weight: 400;
   text-align: left;
   padding: 10px;
+}
+
+ul li {
+  list-style: none;
 }

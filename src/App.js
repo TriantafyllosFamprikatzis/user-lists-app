@@ -23,17 +23,35 @@ const App = () => {
 
   const addUserHandler = (user) => {
     setUsers((prevUsers) => {
-      return [user, ...prevUsers];
+      const updatedUsers = [user, ...prevUsers]
+      return updatedUsers;
     });
+  };
+
+  const deleteItemHandler = (userId) => {
+    setUsers((prevUsers) => {
+      const updatedUsers = prevUsers.filter(users => users.id !== userId);
+      return updatedUsers;
+    });
+  };
+
+  let content = (
+    <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>
+  );
+
+  if (users.length > 0) {
+    content = (
+      <Users items={users} deleteItem={deleteItemHandler} />
+    )
   };
 
   return(
     <div className="App">
       <Card>
-        <UserInput onAddUser={addUserHandler}/>
+        <UserInput onAddUser={addUserHandler} />
       </Card>
       <Card>
-        <Users items={users}/>
+        {content}
       </Card>
     </div>
   );
