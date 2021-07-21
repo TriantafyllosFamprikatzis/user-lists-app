@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 
 import Card from "./components/UI/Card/Card";
 import UserInput from "./components/UserInput/UserInput";
 import UsersList from "./components/UsersList/UsersList";
-import "./App.css";
 
 const DUMMY_DATA = [
   {
@@ -50,10 +49,10 @@ const App = () => {
   }
 
   return (
-    <div className="App">
+    <Fragment>
       <UserInput onAddUser={addUserHandler} />
       {content}
-    </div>
+    </Fragment>
   );
 };
 
