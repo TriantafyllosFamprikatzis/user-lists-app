@@ -1,8 +1,8 @@
 import React from "react";
 
-import Card from '../UI/Card/Card';
-import User from '../User/User';
-import styles from './UserList.module.css';
+import Card from "../UI/Card/Card";
+import User from "../User/User";
+import styles from "./UserList.module.css";
 
 const Users = (props) => {
   return (
