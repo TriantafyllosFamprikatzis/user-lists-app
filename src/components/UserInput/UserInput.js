@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 
 import Card from "../UI/Card/Card";
 import Button from "../UI/Button/Button";
 import ErrorModal from "../UI/ErrorModal/ErrorModal";
-import Wrapper from "../Helpers/Wrapper";
 import styles from "./UserInput.module.css";
 
 const UserInput = (props) => {
@@ -57,7 +56,7 @@ const UserInput = (props) => {
   };
 
   return (
-    <Wrapper>
+    <Fragment>
       {error && (
         <ErrorModal
           title={error.title}
@@ -90,7 +89,7 @@ const UserInput = (props) => {
           </div>
         </form>
       </Card>
-    </Wrapper>
+    </Fragment>
   );
 };
 
