@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import Card from './components/UI/Card/Card';
-import UserInput from './components/UserInput/UserInput';
-import UsersList from './components/UsersList/UsersList';
-import './App.css';
+import Card from "./components/UI/Card/Card";
+import UserInput from "./components/UserInput/UserInput";
+import UsersList from "./components/UsersList/UsersList";
+import "./App.css";
 
 const DUMMY_DATA = [
   {
-    name: 'Max',
-    age: 31 + ' years old',
-    id: 'g1'
+    name: "Max",
+    age: 31 + " years old",
+    id: "g1",
   },
   {
-    name: 'Alice',
-    age: 25 + ' years old',
-    id: 'g2'
-  }
+    name: "Alice",
+    age: 25 + " years old",
+    id: "g2",
+  },
 ];
 
 const App = () => {
@@ -30,29 +30,31 @@ const App = () => {
 
   const deleteItemHandler = (userId) => {
     setUsersList((prevUsers) => {
-      const updatedUsers = prevUsers.filter(usersList => usersList.id !== userId);
+      const updatedUsers = prevUsers.filter(
+        (usersList) => usersList.id !== userId
+      );
       return updatedUsers;
     });
   };
 
   let content = (
     <Card>
-      <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>
+      <p style={{ textAlign: "center", padding: "20px 85px" }}>
+        No goals found. Maybe add one?
+      </p>
     </Card>
   );
 
   if (usersList.length > 0) {
-    content = (
-      <UsersList users={usersList} deleteItem={deleteItemHandler} />
-    )
-  };
+    content = <UsersList users={usersList} deleteItem={deleteItemHandler} />;
+  }
 
-  return(
+  return (
     <div className="App">
       <UserInput onAddUser={addUserHandler} />
       {content}
     </div>
   );
-}
+};
 
 export default App;
